@@ -29,7 +29,7 @@ class App extends Component {
       {id: '2', name: "Thor", age: 1500},
       {id: '3', name: "Natasha", age: 32}
     ],
-    showPersons: false
+  //  showPersons: false
   }
 
 /*  switchNameHandler = (newName) => {
