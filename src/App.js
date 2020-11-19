@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
 //import React, { useState } from 'react'    // this is for React Hooks
 import './App.css';
+//import styled from 'styled-components'
+//import Radium, {StyleRoot} from 'radium'
 import Person from './Person/Person'
+
+//Styled component
+/*const StyledButton = styled.button`
+  background-color: ${props => props.alt ? 'red' : 'green'};
+  color: white;
+  font: inherit;
+  border: 3px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${props => props.alt ? 'yellow' : 'lightgreen'};
+    color: black;
+  }
+`;
+*/
 
 class App extends Component {
 
@@ -68,12 +86,17 @@ class App extends Component {
 
   render() {
 
-    const style = {
-      backgroundColor: 'white',
+     const style = {
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '3px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover':{
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     }
 
     let persons = null
@@ -106,17 +129,34 @@ class App extends Component {
 
         </div>
       )
+//      style.backgroundColor= 'red'  // setting style dynamically
+//      style[':hover'] = {
+//        backgroundColor: 'salmon',
+//        color: 'black'
+//      }
     }
 
+//    let classes = ['red', 'bold'].join(' ')
+      const classes = []
+      if(this.state.persons.length <=2){
+        classes.push('red')     // classes =['red']
+      }
+      if(this.state.persons.length <=1){
+        classes.push('bold')    // classes = ['red', 'bold']
+      }
+
+
     return (
+  //To use Radium media queries, wrap <div> tag in  <StyleRoot>
       <div className="App">
       <h1>Hi, I am a react app</h1>
-      <p> This is a paragraph</p>
-      <button 
-      style={style}
-    //  onClick={() => this.switchNameHandler("Iron man")}>Switch name</button>
-        onClick={this.togglePersonsHandler}>Toggle Persons</button>
+      <p className={classes.join(' ')}> This is a paragraph</p>
+{/*       <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton> */}
+      <button onClick={this.togglePersonsHandler}>Toggle Persons</button>  
         {persons}
+
+        {/*   onClick={() => this.switchNameHandler("Iron man")}>Switch name</button>  Use this after style to switch Names */}  
+
 {/*       {this.state.showPersons ? 
         <div>
           <Person 
@@ -139,7 +179,7 @@ class App extends Component {
 
       This is the way we can use props
 */}   
-    </div>    
+    </div>   
     )
 
   // Above code looks like a html code but internally it compiled to below code and hence it is called as JSX 
@@ -154,6 +194,7 @@ class App extends Component {
 
   }
 }
+//export default Radium(App)
 export default App
 
 // React Hooks
