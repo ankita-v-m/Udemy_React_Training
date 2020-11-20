@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import React, { useState } from 'react'    // this is for React Hooks
-import cssStyleClassName from './App.css';
+import cssStyleClassName from './App.module.css';
 //import styled from 'styled-components'
 //import Radium, {StyleRoot} from 'radium'
 import Person from './Person/Person'

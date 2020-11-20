@@ -1,7 +1,7 @@
 import React from 'react';
 //import Radium from 'radium'
 import styled from 'styled-components'
-import cssStyleClassName from './Person.css'
+import cssStyleClassName from './Person.module.css'
 
 //When we have react-scripts version above 1.0.0 then we need not to eject, just use module while importing.
 // eg. import cssStyleClassName from './Person.module.css'
