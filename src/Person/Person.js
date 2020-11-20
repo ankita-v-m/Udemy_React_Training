@@ -30,7 +30,14 @@ const person = (props) => {
 //                color: 'royalblue'            
 //                }
 //    }
+
+//    const rnd = Math.random()
+//    if(rnd > 0.7){
+//        throw new Error ("Something went wrong")
+//    }
+
 return (
+
     // <div className="Person" style={style}>
    // <StyledDiv>
    <div className={cssStyleClassName.Person}>
