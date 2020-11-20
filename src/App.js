@@ -1,9 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 //import React, { useState } from 'react'    // this is for React Hooks
-import './App.css';
+import cssStyleClassName from './App.css';
 //import styled from 'styled-components'
 //import Radium, {StyleRoot} from 'radium'
 import Person from './Person/Person'
+
+// IMP while using CSS Module :
+//When we have react-scripts version above 1.0.0 then we need not to eject, just use module while importing.
+// eg. import cssStyleClassName from './Person.module.css'
+// and rename css file as Filename.module.css and it will automatically get enabled.
 
 //Styled component
 /*const StyledButton = styled.button`
@@ -86,7 +91,7 @@ class App extends Component {
 
   render() {
 
-     const style = {
+/*     const style = {
       backgroundColor: 'green',
       color: 'white',
       font: 'inherit',
@@ -98,8 +103,10 @@ class App extends Component {
         color: 'black'
       }
     }
-
+*/
     let persons = null
+    let btnClass = ''
+
     if(this.state.showPersons)
     {
       persons = (
@@ -134,25 +141,27 @@ class App extends Component {
 //        backgroundColor: 'salmon',
 //        color: 'black'
 //      }
+      btnClass = cssStyleClassName.Red
+
     }
 
 //    let classes = ['red', 'bold'].join(' ')
-      const classes = []
+      const assignedClasses = []
       if(this.state.persons.length <=2){
-        classes.push('red')     // classes =['red']
+        assignedClasses.push(cssStyleClassName.red)     // assignedClasses =['red']
       }
       if(this.state.persons.length <=1){
-        classes.push('bold')    // classes = ['red', 'bold']
+        assignedClasses.push(cssStyleClassName.bold)    // assignedClasses = ['red', 'bold']
       }
 
 
     return (
   //To use Radium media queries, wrap <div> tag in  <StyleRoot>
-      <div className="App">
+      <div className={cssStyleClassName.App}>
       <h1>Hi, I am a react app</h1>
-      <p className={classes.join(' ')}> This is a paragraph</p>
+      <p className={assignedClasses.join(' ')}> This is a paragraph</p>
 {/*       <StyledButton alt={this.state.showPersons} onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton> */}
-      <button onClick={this.togglePersonsHandler}>Toggle Persons</button>  
+      <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>  
         {persons}
 
         {/*   onClick={() => this.switchNameHandler("Iron man")}>Switch name</button>  Use this after style to switch Names */}  
