@@ -7,11 +7,13 @@
     text-align: center;
 }
 
-  @media (min-width : 500px) {
+/*We could use media queries like this but we are using radium for inline media queries.--In Person.js*/
+/* @media (min-width: 500px) {
     .Person {
         width: 450px;
         color: royalblue;
     }
 }
 
+*/
 
