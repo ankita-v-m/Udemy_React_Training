@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.css';
+ 
+const Cockpit = (props) => {
 
-const cockpit = (props) => {
+    useEffect(() => {
+        console.log('[Cockpit.js] useEffect');
+        //HTTP request can be send from this React Hook. 
+        //But as useEffect runs everytime the component renders,we don't want to send HTTP reuqest everytime. 
+        //So then we can use setTimeout. Pass [] empty array to run it only once
+
+        // setTimeout(() => {
+    //         alert("Saved Data to cloud");
+    //      }, 1000);
+    // toggleButtonRef.current.click();
+    return () => {
+        console.log("[Cockpit.js] cleanup work in useEffect");
+      };
+    }, []);
+
+    useEffect(() => {
+        console.log('[Cockpit.js] 2nd useEffect');
+        return () => {
+            console.log('[Cockpit.js] cleanup work in 2nd useEffect')
+        }
+    });
+
     const assignedClasses = [];
     let btnClass = '';
 
@@ -25,4 +48,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+export default Cockpit;
