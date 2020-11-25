@@ -22,7 +22,8 @@ class Person extends Component {
     render() {
         console.log('[Person.js] rendering...');
         return (
-        <Fragment>
+        // <Fragment></Fragment> use instead of div tag
+        <div className="Person">
                 {this.context.authenticated ? <p>Authenticated</p> : <p>Please log in</p>
                 }
                      
@@ -30,7 +31,7 @@ class Person extends Component {
           {context => {
           }}
         </AuthContext.Consumer> */}
-        {/* // <div className="Person"> */}
+        {/* // <Fragment> */}
         <p onClick={this.props.click}>
           I'm {this.props.name} and I am {this.props.age} years old
         </p>
@@ -44,7 +45,8 @@ class Person extends Component {
           onChange={this.props.changed}
           value={this.props.name}
         />
-        </Fragment>
+        </div>
+        
         )
     }
 } 
