@@ -5,15 +5,15 @@
     box-shadow: 0 2px 3px #ccc;
     padding: 16px;
     text-align: center;
+    color: blue;
 }
 
 /*We could use media queries like this but we are using radium for inline media queries.--In Person.js*/
 /* @media (min-width: 500px) {
-    .Person {
-        width: 450px;
-        color: royalblue;
-    }
-}
+        .Person {
+          width: 450px;
+        }
+      } */
 
-*/
+
 
