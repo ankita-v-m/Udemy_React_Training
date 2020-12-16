@@ -12,7 +12,7 @@ import AuthContext from '../context/auth-context'
 //import Auxiliary from '../hoc/Auxiliary'
 
 
-class App extends Component {
+class App extends Component {  
 
   constructor(props) {
     super(props);
